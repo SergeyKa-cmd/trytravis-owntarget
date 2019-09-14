@@ -1,7 +1,11 @@
 # SergeyKa-cmd_infra
 
-## Working with Travis CI & Github & Slack integration for process monitoring
+### Working with Travis CI & Github & Slack integration for process monitoring
+## Main Goal: correct Python test.py file for passing unit test in Travis CI
 # Prerequisites for testing repository:
+   + Installation of Ruby and rubygems packages
+      
+      *See Issues with Ruby installation.
    + Cloned repository from [OTUS Workspace](https://github.com/Otus-DevOps-2019-08/SergeyKa-cmd_infra)
      
      $ git checkout -b play-travis
@@ -15,7 +19,7 @@
      
      [test.py](https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/test.py) - Python test file
  _______________________________________________________________________________________________
-Issues with ruby installation:
+*Issues with ruby installation:
 + for proper installing ruby packets used this command:
  $ sudo gem install travis -V
   Also need correct DNS configuration to default 8.8.8.8, 8.8.4.4

@@ -5,6 +5,9 @@
 # Prerequisites for testing repository:
    + Installation of Ruby and rubygems packages
       
+      $ sudo apt install ruby-ful
+      
+      $ sudo gem install travis
       *See Issues with Ruby installation.
    + Cloned repository from [OTUS Workspace](https://github.com/Otus-DevOps-2019-08/SergeyKa-cmd_infra) to local environment
      
@@ -19,8 +22,9 @@
      
      [test.py](https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/test.py) - Python test file
  _______________________________________________________________________________________________
-*Issues with ruby installation:
+*Issues with ruby installation in my environment:
 + for proper installing ruby packets used this command:
+ 
  $ sudo gem install travis -V
   Also need correct DNS configuration to default 8.8.8.8, 8.8.4.4
 
@@ -31,7 +35,7 @@
 
 # How to run process
    + Fork repository from [OTUS-DevOps-2019-08](https://github.com/Otus-DevOps-2019-08/SergeyKa-cmd_infra)
-   + Preform all manupulations from [Prerequisites section](# Prerequisites for testing repository:)   
+   + Preform all manupulations from [Prerequisites section](#Prerequisites for testing repository:)   
    + Make commit to your repository on Github for Slack integration testing
    
 # Correct python file test.py

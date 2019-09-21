@@ -34,8 +34,8 @@
         $ ellen-ripley
 -----------------------------------------------------------------------------------------------------------------------------------
 ## How to test environment:
-### bastionych_IP = 34.77.5.134
-### ellen-ripley_IP = 10.132.0.3
+### bastion_IP = 34.77.5.134
+### someinternalhost_IP = 10.132.0.3
 
    + Use attached cloud-bastion.ovpn file and Openvpn client on your host.
    + Try to connect with pre-installed ssh-key before and using command:

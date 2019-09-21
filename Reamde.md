@@ -1,10 +1,10 @@
 # SergeyKa-cmd-cloud-bastion
 
-### Working on Google Cloud Platform *(GCP)
+# Working on Google Cloud Platform *(GCP)
 ## Main issue: Connection establishment between host machine and isolated instance in GCP
-# Secondary issue: Prepare solution with trusted Certificate authority for Pritunl web interface
+## Secondary issue: Prepare solution with trusted Certificate authority for Pritunl web interface
 
-# Prerequisites for testing repository:
+## Prerequisites for testing repository:
    + Creating GCP account with two "bastionych" and "ellen-ripley" Vm instances.
    + Prepare for ssh keys on host machine for Appuser user generating keys for GCP by using command:
     
@@ -26,6 +26,7 @@
       # Run command:
 
         $ ssh appuser@ellen-ripley
+        
     2. Way with using hops between hosts using -J option within one alias in ~/.bashrc file:
       alias ellen-ripley='ssh -i ~/.ssh/appuser -A -J appuser@34.77.5.134 appuser@10.132.0.3'
      # Run command:
@@ -33,8 +34,8 @@
         $ ellen-ripley
 -----------------------------------------------------------------------------------------------------------------------------------
 ## How to test environment:
-# bastionych_IP = 34.77.5.134
-# ellen-ripley_IP = 10.132.0.3
+### bastionych_IP = 34.77.5.134
+### ellen-ripley_IP = 10.132.0.3
 
    + Use attached cloud-bastion.ovpn file and Openvpn client on your host.
    + Try to connect with pre-installed ssh-key before and using command:

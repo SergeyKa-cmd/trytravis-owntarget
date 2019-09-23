@@ -10,7 +10,7 @@
   + Creating Firewall rule for port opening (tcp:9292) manually on CGP console or using gcloud script [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
   
   ## App testing:
-  ### testapp_IP = 104.199.86.140
+  ### testapp_IP = 35.241.180.163
   ### testapp_port = 9292
   Open url http://<vm instance IP>:9292
   

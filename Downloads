@@ -1,0 +1,20 @@
+#!/bin/bash
+###########
+# Bash script for deploy puma server on Ruby
+# Written by sserdj@gmail.com for OTUS
+##########
+
+echo "Moving to HOME directory"
+cd $HOME
+pwd
+echo "Clonning repository from github.com/express42/reddit"
+git clone -b monolith https://github.com/express42/reddit.git
+echo "Clonning complete!"
+echo "Installing packages:"
+cd reddit && bundle install -y
+echo "Puma server starting:"
+puma -d
+echo "Check HTTP listening port:"
+ps aux | grep puma
+
+echo "Deploy complete!"

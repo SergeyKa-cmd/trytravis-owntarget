@@ -15,6 +15,6 @@
   Open url http://<vm instance IP>:9292
   
   ## Additional task:
-  [Startup-script](https://gist.githubusercontent.com/SergeyKa-cmd/35797877c0aae680ea9ffa7e3dfed5d7/raw/06064fb97f0a2cd3032c65e637ae48cd067cc3bf/startup_script_url.sh)
-  [Firewall creation script](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
+  + [Startup-script](https://gist.githubusercontent.com/SergeyKa-cmd/35797877c0aae680ea9ffa7e3dfed5d7/raw/06064fb97f0a2cd3032c65e637ae48cd067cc3bf/startup_script_url.sh)
+  + [Firewall creation script](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
   

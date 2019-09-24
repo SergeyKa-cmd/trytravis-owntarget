@@ -16,5 +16,6 @@
   
   ## Additional task:
   + [Startup-script](https://gist.githubusercontent.com/SergeyKa-cmd/35797877c0aae680ea9ffa7e3dfed5d7/raw/06064fb97f0a2cd3032c65e637ae48cd067cc3bf/startup_script_url.sh)
+  + [Startup-script-url](https://gist.githubusercontent.com/SergeyKa-cmd/38e96487831a0f36307c166c80161bba/raw/f572abd2df0a8adf033704b69cf5e7aa1006a644/startup-script-url.sh)
   + [Firewall creation script](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
   

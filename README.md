@@ -17,7 +17,7 @@
     1. Way for used shorthand command with hops between hosts using -J option in ~/.ssh/config file
     
       Host bastionych
-      Hostname 34.77.5.134
+      Hostname 35.187.97.192
       User appuser
       Host ellen-ripley
       Hostname 10.132.0.3
@@ -28,18 +28,18 @@
         $ ssh appuser@ellen-ripley
         
     2. Way with using hops between hosts using -J option within one alias in ~/.bashrc file:
-      alias ellen-ripley='ssh -i ~/.ssh/appuser -A -J appuser@34.77.5.134 appuser@10.132.0.3'
+      alias ellen-ripley='ssh -i ~/.ssh/appuser -A -J appuser@35.187.97.192 appuser@10.132.0.3'
      # Run command:
         
         $ ellen-ripley
 -----------------------------------------------------------------------------------------------------------------------------------
 ## How to test environment:
-### bastion_IP = 34.77.5.134
+### bastion_IP = 35.187.97.192
 ### someinternalhost_IP = 10.132.0.3
 
    + Use attached cloud-bastion.ovpn file and Openvpn client on your host.
    + Try to connect with pre-installed ssh-key before and using command:
     
     $ ssh -i ~/.ssh/appuser appuser@ellen-ripley or IP
-   + Ensure that your connection is established and secured on [Pritunl Dashboard](https://34.77.5.134/)
+   + Ensure that your connection is established and secured on [Pritunl Dashboard](https://35.187.97.192.nip.io)
 

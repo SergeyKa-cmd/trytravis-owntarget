@@ -1,0 +1,10 @@
+{
+    "project_id": "nostromo-253518",
+    "source_image_family": "ubuntu-1604-lts",
+    "machine_type": "f1-micro",
+    "image_description": "Pre-built image aka backed",
+    "disk_type": "pd-standard",
+    "disk_size": "10",
+    "network_project_id": "nostromo-253518-NIC0",
+    "tags": "db-server"
+}

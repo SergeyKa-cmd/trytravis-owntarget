@@ -4,7 +4,7 @@
     "machine_type": "Like f1-micro",
     "image_description": "Someshit maker",
     "disk_type": "pd-standard or pd-ssd",
-    "disk-size": "Size in GB",
-    "network_project_id": "your project_id",
+    "disk-size": "10",
+    "network_project_id": "your project_id-NIC0",
     "tags": "http-server, LAMP"
-}%      
+}  

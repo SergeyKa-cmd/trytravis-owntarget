@@ -1,20 +1,45 @@
-# SergeyKa-cmd_infra
-## Test application deployment
-### Main issue: preparing bash automation scripts for test app deployment
-### Additional task: Perform startup-script for GCP automation and firewall rule cli command
+# SergeyKa-cmd-cloud-bastion
 
-## System prerequisites:
-  + Preparing for gcloud/gsutil commandlet using [Documentation](https://cloud.google.com/sdk/docs/)
-  + Creating new VM instance with gcloud command [Link to gist](https://gist.githubusercontent.com/Nklya/5bc429c6ca9adce1f7898e7228788fe5/raw/01f9e4a1bf00b4c8a37ca6046e3e4d4721a3316a/gcloud)
-  + Manual apps deployment (Ruby, MongoDB, Puma-server) or using [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/67d8d331fa7ba90d647a1c7e154c8c83/raw/6d1a40f7ac2e9eadd1c9fa547e1d327453d7154c/puma_deploy.sh)
-  + Creating Firewall rule for port opening (tcp:9292) manually on CGP console or using gcloud script [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
-  
-  ## App testing:
-  ### testapp_IP = 35.241.180.163
-  ### testapp_port = 9292
-  Open url http://<vm instance IP>:9292
-  
-  ## Additional task:
-  + [Startup-script](https://gist.githubusercontent.com/SergeyKa-cmd/35797877c0aae680ea9ffa7e3dfed5d7/raw/06064fb97f0a2cd3032c65e637ae48cd067cc3bf/startup_script_url.sh)
-  + [Startup-script-url](https://gist.githubusercontent.com/SergeyKa-cmd/38e96487831a0f36307c166c80161bba/raw/f572abd2df0a8adf033704b69cf5e7aa1006a644/startup-script-url.sh)
-  + [Firewall creation script](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
+# Working on Google Cloud Platform *(GCP)
+## Main issue: Connection establishment between host machine and isolated instance in GCP
+## Secondary issue: Prepare solution with trusted Certificate authority for Pritunl web interface
+
+## Prerequisites for testing repository:
+   + Creating GCP account with two "bastionych" and "ellen-ripley" Vm instances.
+   + Prepare for ssh keys on host machine for Appuser user generating keys for GCP by using command:
+    
+    $ ssh-keygen -t rsa -f ~/.ssh/appuser -C appuser -P ""
+   + Create instance with public IP with pre-installed VPN Pritunl web server (using attached setupvpn.sh file) and apply proper firewall inbound rules for this instance (Bastionych in that case)
+   + Create another instance without public IP connections which means to be isolated ("ellen-ripley" in that case)
+   + With generated file on Pritunl Web server (using attached cloud-bastion.ovpn file) and OpenVPN client (used Pritunl Client in my case) connect to the isolated instance excluding to use instance with public IP addres (like host -> bastionych -> ellen-ripley) only using host -> ellen-ripley scheme.
+----------------------------------------------------------------------------------------------------------------------------------
+   + Additional objectives: Prepared for two alternative shorthand path to connect with isolated "ellen-ripley" instance
+    1. Way for used shorthand command with hops between hosts using -J option in ~/.ssh/config file
+    
+      Host bastionych
+      Hostname 35.187.97.192
+      User appuser
+      Host ellen-ripley
+      Hostname 10.132.0.3
+      IdentityFile ~/.ssh/appuser.pub
+      ProxyCommand ssh -q bastionych nc ellen-ripley 22
+      # Run command:
+
+        $ ssh appuser@ellen-ripley
+        
+    2. Way with using hops between hosts using -J option within one alias in ~/.bashrc file:
+      alias ellen-ripley='ssh -i ~/.ssh/appuser -A -J appuser@35.187.97.192 appuser@10.132.0.3'
+     # Run command:
+        
+        $ ellen-ripley
+-----------------------------------------------------------------------------------------------------------------------------------
+## How to test environment:
+### bastion_IP = 35.187.97.192
+### someinternalhost_IP = 10.132.0.3
+
+   + Use attached cloud-bastion.ovpn file and Openvpn client on your host.
+   + Try to connect with pre-installed ssh-key before and using command:
+    
+    $ ssh -i ~/.ssh/appuser appuser@ellen-ripley or IP
+   + Ensure that your connection is established and secured on [Pritunl Dashboard](https://35.187.97.192.nip.io)
+

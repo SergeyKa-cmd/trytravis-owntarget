@@ -1,20 +1,27 @@
 # SergeyKa-cmd_infra
-## Test application deployment
-### Main issue: preparing bash automation scripts for test app deployment
-### Additional task: Perform startup-script for GCP automation and firewall rule cli command
+## GCP environment deployment using Packer
+### Main issue: preparing custom JSON configuration files for private image processing
+### Additional task: preparing custom JSON with pre-built image creation processing, deployment VM instance from pre-built image
 
 ## System prerequisites:
-  + Preparing for gcloud/gsutil commandlet using [Documentation](https://cloud.google.com/sdk/docs/)
-  + Creating new VM instance with gcloud command [Link to gist](https://gist.githubusercontent.com/Nklya/5bc429c6ca9adce1f7898e7228788fe5/raw/01f9e4a1bf00b4c8a37ca6046e3e4d4721a3316a/gcloud)
-  + Manual apps deployment (Ruby, MongoDB, Puma-server) or using [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/67d8d331fa7ba90d647a1c7e154c8c83/raw/6d1a40f7ac2e9eadd1c9fa547e1d327453d7154c/puma_deploy.sh)
+  + Insall [Packer environment](https://www.packer.io/downloads.html) and prepare for Application Default Credentials:
+  
+   $ gcloud auth application-default login
+  + Prepare base image "reddit-base" in repository ./config-scripts/ubuntu16.json and ./config-scripts/variables.json See [Related documentation](https://www.packer.io/docs/builders/googlecompute.html);
+  + Tuning packer JSON file with additional features ("machine_type", "image_description", "disk_type", "disk_size", "tags");
+  + Preparation of customized immutable.json & variables.json files and script files in ./files;
+  + gcloud script file preparation for image-to-intsance deployment [Link to Gist](https://gist.github.com/SergeyKa-cmd/b24ae20b275bfb8e49da426bebceb621).
   + Creating Firewall rule for port opening (tcp:9292) manually on CGP console or using gcloud script [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
   
   ## App testing:
-  ### testapp_IP = 35.241.180.163
-  ### testapp_port = 9292
-  Open url http://<vm instance IP>:9292
+  + For prepare base image "reddit-base" run cmdlet within ./config-scripts repository folder:
+  
+  $ packer build -var-file=variables.json immutable.json
+  + reddit-full_IP = (ip of created "reddit-vm instance")
+  + reddit-full_port = 9292
+  Open url http://(<vm instance IP>):9292
   
   ## Additional task:
-  + [Startup-script](https://gist.githubusercontent.com/SergeyKa-cmd/35797877c0aae680ea9ffa7e3dfed5d7/raw/06064fb97f0a2cd3032c65e637ae48cd067cc3bf/startup_script_url.sh)
-  + [Startup-script-url](https://gist.githubusercontent.com/SergeyKa-cmd/38e96487831a0f36307c166c80161bba/raw/f572abd2df0a8adf033704b69cf5e7aa1006a644/startup-script-url.sh)
-  + [Firewall creation script](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
+  + For prepare pre-built or "backed" image from "reddit-base" image run cmdlet within root repository folder:
+  $ packer build -var-file=variables.json immutable.json
+  + For instance from baked image deployment use gcloud cmdlet in bash [Link to Gist](https://gist.githubusercontent.com/SergeyKa-cmd/b24ae20b275bfb8e49da426bebceb621/raw/0090e03f85b60547c94c56737e10a4aef0e838a6/create-reddit-%2520vm.sh)

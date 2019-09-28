@@ -19,6 +19,7 @@
       $ packer build -var-file=variables.json immutable.json
   + reddit-full_IP = (ip of created "reddit-vm instance")
   + reddit-full_port = 9292
+  
   Open url http://(<vm instance IP>):9292
   
   ## Additional task:

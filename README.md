@@ -1,45 +1,29 @@
-# SergeyKa-cmd-cloud-bastion
+# SergeyKa-cmd_infra
+## GCP environment deployment using Packer
+### Main issue: preparing custom JSON configuration files for private image processing
+### Additional task: preparing custom JSON with pre-built image creation processing, deployment VM instance from pre-built image
 
-# Working on Google Cloud Platform *(GCP)
-## Main issue: Connection establishment between host machine and isolated instance in GCP
-## Secondary issue: Prepare solution with trusted Certificate authority for Pritunl web interface
-
-## Prerequisites for testing repository:
-   + Creating GCP account with two "bastionych" and "ellen-ripley" Vm instances.
-   + Prepare for ssh keys on host machine for Appuser user generating keys for GCP by using command:
-    
-    $ ssh-keygen -t rsa -f ~/.ssh/appuser -C appuser -P ""
-   + Create instance with public IP with pre-installed VPN Pritunl web server (using attached setupvpn.sh file) and apply proper firewall inbound rules for this instance (Bastionych in that case)
-   + Create another instance without public IP connections which means to be isolated ("ellen-ripley" in that case)
-   + With generated file on Pritunl Web server (using attached cloud-bastion.ovpn file) and OpenVPN client (used Pritunl Client in my case) connect to the isolated instance excluding to use instance with public IP addres (like host -> bastionych -> ellen-ripley) only using host -> ellen-ripley scheme.
-----------------------------------------------------------------------------------------------------------------------------------
-   + Additional objectives: Prepared for two alternative shorthand path to connect with isolated "ellen-ripley" instance
-    1. Way for used shorthand command with hops between hosts using -J option in ~/.ssh/config file
-    
-      Host bastionych
-      Hostname 35.187.97.192
-      User appuser
-      Host ellen-ripley
-      Hostname 10.132.0.3
-      IdentityFile ~/.ssh/appuser.pub
-      ProxyCommand ssh -q bastionych nc ellen-ripley 22
-      # Run command:
-
-        $ ssh appuser@ellen-ripley
-        
-    2. Way with using hops between hosts using -J option within one alias in ~/.bashrc file:
-      alias ellen-ripley='ssh -i ~/.ssh/appuser -A -J appuser@35.187.97.192 appuser@10.132.0.3'
-     # Run command:
-        
-        $ ellen-ripley
------------------------------------------------------------------------------------------------------------------------------------
-## How to test environment:
-### bastion_IP = 35.187.97.192
-### someinternalhost_IP = 10.132.0.3
-
-   + Use attached cloud-bastion.ovpn file and Openvpn client on your host.
-   + Try to connect with pre-installed ssh-key before and using command:
-    
-    $ ssh -i ~/.ssh/appuser appuser@ellen-ripley or IP
-   + Ensure that your connection is established and secured on [Pritunl Dashboard](https://35.187.97.192.nip.io)
-
+## System prerequisites:
+  + Insall [Packer environment](https://www.packer.io/downloads.html) and prepare for Application Default Credentials:
+  
+      $ gcloud auth application-default login
+  + Prepare base image "reddit-base" in repository ./config-scripts/ubuntu16.json and ./config-scripts/variables.json See [Related documentation](https://www.packer.io/docs/builders/googlecompute.html);
+  + Tuning packer JSON file with additional features ("machine_type", "image_description", "disk_type", "disk_size", "tags");
+  + Preparation of customized immutable.json & variables.json files and script files in ./files;
+  + gcloud script file preparation for image-to-intsance deployment [Link to Gist](https://gist.github.com/SergeyKa-cmd/b24ae20b275bfb8e49da426bebceb621).
+  + Creating Firewall rule for port opening (tcp:9292) manually on CGP console or using gcloud script [Link to gist](https://gist.githubusercontent.com/SergeyKa-cmd/c9782954abe6ba4e076bc32f87285537/raw/f7980a965be6998f310cfd3800a4bc62072dd0e6/gcp_firewall_tcp9292.sh)
+  
+  ## App testing:
+  + For prepare base image "reddit-base" run cmdlet within ./config-scripts repository folder:
+  
+      $ packer build -var-file=variables.json immutable.json
+  + reddit-full_IP = (ip of created "reddit-vm instance")
+  + reddit-full_port = 9292
+  
+  Open url http://(<vm instance IP>):9292
+  
+  ## Additional task:
+  + For prepare pre-built or "backed" image from "reddit-base" image run cmdlet within root repository folder:
+  
+      $ packer build -var-file=variables.json immutable.json
+  + For instance from baked image deployment use gcloud cmdlet in bash [Link to Gist](https://gist.githubusercontent.com/SergeyKa-cmd/b24ae20b275bfb8e49da426bebceb621/raw/0090e03f85b60547c94c56737e10a4aef0e838a6/create-reddit-%2520vm.sh)

@@ -1,8 +1,8 @@
 # SergeyKa-cmd_infra
 ## IaC practice using Terraform environment
 ### Main issue: preparing and customise terraform project files for instances creation processing
-### Additional task: customise main.tf file with adding public ssh key to various users
-### Additional task: preparing load balance to multiple instances using terraform
+### *Additional task: customise main.tf file with adding public ssh key to various users
+### **Additional task: preparing load balance to multiple instances using terraform
 
 ## System prerequisites:
   + Prepare your environment with terraform app [Download Terraform](https://www.terraform.io/downloads.html)

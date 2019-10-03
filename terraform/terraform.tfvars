@@ -1,0 +1,9 @@
+project             = "nostromo-253518"
+public_key_path     = "~/.ssh/appuser.pub"
+public_key_path_tf  = "~/.ssh/appuser_web.pub"
+disk_image          = "reddit-base-1569777902"
+private_key_path    = "~/.ssh/appuser"
+private_key_path_tf = "~/.ssh/appuser_web"
+zone                = "europe-west1-b"
+external_ip         = "google_compute_instance.app.network_interface[0].access_config[0].nat_ip"
+count_instance      = 2

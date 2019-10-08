@@ -23,11 +23,11 @@
   + Simply stop one of the created instance "reddit-app" and ensure that http://lb_ip_address:9292 still available
   + Using web browser connect to your console.cloud.google or use cmdlet:
 		
-		$gcloud compute instances list
-	+ Use one of the url after terraform completion task like: http://some ip address:9292
-	+ Ensure that Monolith Reddit web server is available on each of defined IP address
+     $gcloud compute instances list
+  + Use one of the url after terraform completion task like: http://some ip address:9292
+  + Ensure that Monolith Reddit web server is available on each of defined IP address
 		
-	## Additional tasks
-	 + Check ~/.bash.profile file for pre-defined Database ip address on reddit-app instance
-	 + Configured google cloud storage bucket for .tfvars as file registry service
-	 + Manipulating with root terraform configuration files state lock: success
+  ## Additional tasks
+  + Check ~/.bash.profile file for pre-defined Database ip address on reddit-app instance
+  + Configured google cloud storage bucket for .tfvars as file registry service
+  + Manipulating with root terraform configuration files state lock: success

@@ -1,0 +1,26 @@
+--- 
+## Configure Puma section
+- name: Configure Puma server
+  hosts: app
+  become: true
+  vars:
+    db_host: 10.132.0.32
+  tasks:
+    - name: Add unit file for Puma
+      copy:
+        src: files/puma.service
+        dest: /etc/systemd/system/puma.service
+      notify: reload puma
+  
+    - name: Add config for DB connection
+      template:
+        src: template/db_config.j2
+        dest: /home/appuser/db_config
+        owner: appuser #Authorising copy action
+        group: appuser
+    - name: Enable Puma service
+      systemd: name=puma enabled=yes
+
+  handlers:
+  - name: reload puma
+    service: name=puma state=restarted #Task for handler

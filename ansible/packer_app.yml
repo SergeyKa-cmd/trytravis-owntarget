@@ -1,0 +1,11 @@
+---
+- name: Ruby & Bundle install
+  hosts: all
+  become: true
+  tasks:
+  - name: Ruby & RubyGems installation required packages
+    apt: "name={{item}} state=present"
+    with_items:
+      - ruby-full
+      - ruby-bundler
+      - build-essential

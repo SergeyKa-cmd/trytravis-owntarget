@@ -1,4 +1,7 @@
-## SergeyKa-cmd_infra
+## Contents:
+  # 1. Ansible first look
+  # 2. Ansible: advanced deployment and configuration management
+  ______________________________________________________________
 ## Ansible first look
 ### Main issue: preparing Ansible environment and simple playbook
 ### Additional task: design simple script in C++/Python for ansible ping command to dymanic inventory.json file
@@ -14,3 +17,19 @@
     
     $python parse.py
   + After C++/Python scripts find inventory.json file in repository
+_____________________________________________________________________________________________________________________________
+## Ansible: advanced deployment and configuration management
+### Main issue: Re-configuring Ansible playbooks, handlers and configuration templates
+### Additional task: Google API plugin implementation
+## System prerequisites:
+  + Clone this repository to local host
+  + Remove all GCP instances from 1-st task using terraform destroy
+  + Using [Ansible Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_gce.html) prepare environment for Google API using
+ ## App testing for additional task:
+  + Run site.yml playbook
+  + Checkout current inventory in [Google Cloud Console](https://console.cloud.google.com/compute)
+  + Run inventory.gcp.yml playbook for gcp_plugin test like:
+  
+    $ansible -i inventory.gcp.yml all --list
+    
+    $ansible -i inventory.gcp.yml all -m ping

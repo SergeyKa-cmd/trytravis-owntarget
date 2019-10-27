@@ -1,0 +1,9 @@
+--- 
+## Configure Puma section
+- name: Configure Puma server
+  hosts: app
+  become: true
+   
+  roles:
+    - app
+    - jdauphant.nginx

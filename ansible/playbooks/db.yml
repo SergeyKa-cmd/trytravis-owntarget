@@ -1,0 +1,8 @@
+--- 
+## Configure Mongodb section
+- name: Configure mongodb
+  hosts: db
+  become: true
+  
+  roles:
+    - db

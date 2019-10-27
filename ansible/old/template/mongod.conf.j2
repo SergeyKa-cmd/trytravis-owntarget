@@ -11,4 +11,4 @@ systemLog:
 #Network interfaces
 net:
   port: {{mongo_port | default('27017')}}
-  bindIp: {{mongo_bind_ip}}
+  bindIp: {{mongo_bind_ip | default('0.0.0.0')}}

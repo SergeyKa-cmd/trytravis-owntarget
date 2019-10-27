@@ -2,7 +2,7 @@
 - name: Configure hosts & deploy application
   hosts: all
   vars:
-    db_host: 10.132.0.32
+    db_host: 10.132.0.44
   tasks:
     - name: Change mongo config file
       become: true #Root privileges

@@ -1,4 +1,4 @@
-https://travis-ci.org/SergeyKa-cmd/trytravis-owntarget.svg?branch=master
+[![Build Status](https://travis-ci.org/SergeyKa-cmd/trytravis-owntarget.svg?branch=master)](https://travis-ci.org/SergeyKa-cmd/trytravis-owntarget)
 # SergeyKa-cmd_infra
 ## GCP environment deployment using Packer
 ### Main issue: preparing custom JSON configuration files for private image processing

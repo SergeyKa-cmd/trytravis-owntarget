@@ -1,9 +1,90 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.5">
   <diagram name="Page-1" id="WurrhZK5-fgxXUcZVQIS">
-    <mxGraphModel>
+    <mxGraphModel dx="1432" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-7" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_rear;" vertex="1" parent="1">
+          <mxGeometry x="650" y="490" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-8" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl258a_aruba_2930f_8g_poeplus_2sfpplus_rear;" vertex="1" parent="1">
+          <mxGeometry x="650" y="530" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-9" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_front;" vertex="1" parent="1">
+          <mxGeometry x="50" y="460" width="176" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-10" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.jl375a_aruba_8400_front;" vertex="1" parent="1">
+          <mxGeometry x="50" y="530" width="176" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-13" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x43a_aruba_6400_24p_sfp_4sfp56_module;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="172" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-14" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x43a_aruba_6400_24p_sfp_4sfp56_module;" vertex="1" parent="1">
+          <mxGeometry x="360" y="390" width="172" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-15" value="" style="html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rack.hpe_aruba.switches.r0x26a_aruba_cx_6400_switch;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="142" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-9" target="AK7Y3xBkiJo5crRY6JEt-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="570" as="sourcePoint" />
+            <mxPoint x="450" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="236" y="515" as="sourcePoint" />
+            <mxPoint x="360" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="520" as="sourcePoint" />
+            <mxPoint x="650" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-19" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-13" target="AK7Y3xBkiJo5crRY6JEt-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="532" y="561" as="sourcePoint" />
+            <mxPoint x="666" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="516" y="511" as="sourcePoint" />
+            <mxPoint x="650" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-14" target="AK7Y3xBkiJo5crRY6JEt-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="516" y="511" as="sourcePoint" />
+            <mxPoint x="650" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="AK7Y3xBkiJo5crRY6JEt-15" target="AK7Y3xBkiJo5crRY6JEt-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="482" y="420" as="sourcePoint" />
+            <mxPoint x="692" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-23" value="SAN switch" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="85" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-24" value="LAN switch" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="383" y="410" width="85" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-25" value="Yadro Tatlin Storage" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="66" y="610" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-26" value="Core switch" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="66" y="310" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-27" value="Yadro Samba server 2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="570" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AK7Y3xBkiJo5crRY6JEt-28" value="Yadro Samba server 1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="460" width="130" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
